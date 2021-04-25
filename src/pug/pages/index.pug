@@ -1,0 +1,159 @@
+extends ../layouts/default.pug
+
+block config
+
+    //- Global Page Configuration
+    - var pageTitle = 'Warrior'
+
+
+block content
+
+    //- * * * * * * * *
+    //- * * Navbar  * *
+    //- * * * * * * * *
+    include mixins/navbar.pug
+    +navbar({
+        navbarBg: 'bg-white',
+        navbarStyle: 'navbar-light',
+        navbarBrandColor: 'navbar-dark',
+        navbarBtnColor: 'btn-primary',
+        navbarContainer: 'container'
+    })
+
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-white',
+        pageHeaderStyle: 'page-header-white',
+        svgBorderFill: 'text-dark'
+    })
+        .page-header-content
+            .container
+                .row.align-items-center
+                    .col-lg-7
+                        h1.page-header-title The next generation of care for athletes
+                        p.page-header-text.mb-5 Connect with high quality primary care sports medicine physicians on your own time, anywhere
+
+                    .col-lg-5
+                        img.img-fluid(src='assets/img/home-page/climber.jpg')
+
+
+
+    include mixins/header.pug
+    +header({
+
+        pageHeaderStyle: 'page-header-dark',
+        sectionPadding: 'py-1   ',
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-white'
+    })
+
+        .container
+            .row.align-items-center
+                .col-lg-5
+                    img.img-fluid(src='assets/img/svgs/holding-phone-colour.svg').mb-5
+                .col-lg-7
+                    h1.page-header-title Warrior's virtual care model is built around athletes, delivering individualized outcomes for all activity levels
+                    p.page-header-text We’re setting a new standard of injury recovery, prevention and holistic care
+            .row
+                .col-lg-12.text-center
+                    a.btn.btn-teal.btn-marketing.rounded-pill(href='individual.html') For individuals
+
+            .row.pt-4
+                .col-lg-4.mb-5.mb-lg-0
+                    .card.h-100
+                        .card-body.p-5
+                            .text-center
+                                   .h1 Recover from injuries
+                                   .p.text-dark Meet one-on-one with a Warrior provider to heal from runner's knee, shoulder impingement, tennis elbow and more
+                
+                .col-lg-4.mb-5.mb-lg-0
+                    .card.h-100
+                        .card-body.p-5
+                            .text-center
+                                   .h1 Prevent injury
+                                   .p.text-dark Prepare your body for action and never miss a beat. Avoid downtime and costly procedures
+
+                .col-lg-4.mb-5.mb-lg-0
+                    .card.h-100
+                        .card-body.p-5
+                            .text-center
+                                   .h1 On your own schedule
+                                   .p.text-dark Meet with a virtual provider on your own schedule, from anywhere
+
+
+
+    //- include mixins/header.pug
+    //- +header({
+
+    //-     pageHeaderStyle: 'page-header-white',
+    //-     sectionPadding: 'py-1   ',
+    //-     svgBorderRounded: false,
+    //-     svgBorderWaves: false,
+    //-     svgBorderFill: 'text-white'
+    //- })
+
+    //-     .container
+    //-         .row.align-items-center
+    //-             .col-lg-5
+    //-                 img.img-fluid(src='assets/img/svgs/remote-work-man.svg').mb-5
+    //-             .col-lg-7
+    //-                 h1.page-header-title Providers are changing the way sports medicine can be delivered
+    //-                 p.page-header-text.mb-5 Every patient is an athlete. Let's change the possibilteis
+                        
+    //-         .row.pt-4
+    //-             .col-lg-4.mb-5.mb-lg-0
+    //-                 .card.h-100
+    //-                     .card-body.p-5
+    //-                         .text-center
+    //-                                .h1 Easy visits
+    //-                                .p Warrior schedules visits and facilitates billing
+                
+    //-             .col-lg-4.mb-5.mb-lg-0
+    //-                 .card.h-100
+    //-                     .card-body.p-5
+    //-                         .text-center
+    //-                                .h1 Bill Medicare, Medicaid and private insurers
+    //-                                .p New rules have expanded what can be reimbursed 
+
+    //-             .col-lg-4.mb-5.mb-lg-0
+    //-                 .card.h-100
+    //-                     .card-body.p-5
+    //-                         .text-center
+    //-                                .h1 Community first
+    //-                                .p We are comitted to providing a high quality experience for FQHCs and the communities they serve
+
+    //-         .mt-5.text-center
+    //-             a.btn.btn-teal.btn-marketing.rounded-pill(href='provider.html') For providers
+                
+
+    //- include mixins/header.pug
+    //- +header({
+
+    //-     pageHeaderStyle: 'page-header-dark',
+    //-     sectionPadding: 'py-1'
+    //- })
+
+
+
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-white',
+        footerStyle: 'footer-white'
+    })
+
+append scripts
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+        AOS.init({
+            disable: 'mobile',
+            duration: 600,
+            once: true
+        });
